@@ -75,6 +75,17 @@ Go to root directory, there is app.py file. Run that file it will start whole pr
 ```bash
     python3.7 app.py
 ```
+
+## Machine learning steps
+
+The outlined procedures can be viewed in Google Colab and are accessible via the hyperlink provided below.
+
+- [@Link to Google Colab](https://colab.research.google.com/drive/1CWqdZ5ufv3fdDQbIeUX1jKpbiRRvbrrr?authuser=1#scrollTo=rFL-_mkI8vXN)
+## Documentation
+
+[Documentation](https://github.com/mayank-babariya/sentiment_analysis_network_graph_generator)
+
+
 ## Authors
 
 - [@mayank-babariya](https://www.github.com/mayank-babariya)
