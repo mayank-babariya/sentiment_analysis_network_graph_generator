@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment Analyser</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#analyze").submit(function(event) {
+          event.preventDefault();
+          console.log('--------I am called in anayze');
+          var has_tag = $("#has_tag").val();
+          var data = JSON.stringify({'has_tag': has_tag});
+          $.ajax({
+            type: "POST",
+            url: "/start_analyze",
+            data: data,
+            contentType: "application/json",
+            dataType: "json",
+            success: function(response) {
+            console.log(response.result);
+            var tableData = '<table class="table table-bordered">'
+            tableData += '<thead><tr>';
+            tableData += '<th>Description</th>';
+            tableData += '<th># Tags</th>';
+            tableData += '<th>Location</th>';
+            tableData += '<th>Analysis Result</th>';
+            tableData += '<th>Username</th></tr></thead><tbody>';
+
+            $.each(response.result, function(key, value){
+            tableData += '<tr>';
+            $.each(value, function(key, value){
+                tableData += '<td>' + value + '</td>';
+            });
+            tableData += '</tr></tbody>';
+            tableData += '</table>';
+        });
+        $('#table').html(tableData);
+            }
+          });
+        });
+      });
+    </script>
+</head>
+
+<body style="padding-top: 3.5rem;">
+{% include 'navbar.html' %}
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-5">Welcome to Sentiment Analyser!</h1>
+            <p>Sentiment analysis on tweets is the process of using natural language processing and machine learning
+                techniques to identify and classify the underlying sentiment or emotional tone in tweets. It is useful
+                for individuals and businesses alike as it allows them to understand how people feel about their brand,
+                product, service, or any given topic. By analyzing sentiment, one can gain valuable insights into
+                customer opinions, track online reputation, and make data-driven decisions.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form id="analyze" style="width: 100%;">
+                <fieldset>
+                    <div class="form-group">
+                        <label>Tag: </label>
+                        <input class="form-control" id="has_tag" name="has_tag" type="text"
+                               placeholder="#tag" required>
+                    </div>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-block btn-primary">Analyze</button>
+                    </div>
+                    <table name="table" id="table" class="table table-bordered">
+
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+        </br>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Sentiment Analyser</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/analyze_on_tags">Analyze based on # Tags</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/collect_tweets">Collect Tweets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/graph_generator">Tags Network graph</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <a class="navbar-brand" href="#">{{ session['first_name']}}</a>
+        </form>
+        <form class="form-inline my-2 my-lg-0">
+            <a href="/logout" class="btn btn-primary">Logout</a>
+        </form>
+    </div>
+</nav>
