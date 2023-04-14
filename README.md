@@ -89,4 +89,4 @@ The outlined procedures can be viewed in Google Colab and are accessible via the
 ## Authors
 
 - [@mayank-babariya](https://www.github.com/mayank-babariya)
-- [@vansh-shah](https://www.github.com/)
+- [@vansh-shah](https://www.github.com/vanshshah23)
