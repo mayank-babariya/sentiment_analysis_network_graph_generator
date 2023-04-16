@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import os
 import re
 
-savedModel=load_model(os.getcwd()+'/base/static/model/'+'Model.h5')
+savedModel=load_model('/opt/NC-Final-Project/twitter_sentiment_analysis'+'Model.h5')
 
 vocab_size = 20000
 oov_tok = "<OOV>"
