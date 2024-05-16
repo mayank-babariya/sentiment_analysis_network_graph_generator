@@ -1,14 +1,16 @@
 
 # Sentiment Analyser & Network graph generator
-The application was developed to analyse sentiemnt by collecting real time tweet from twitter and generate network graph to visualize what individuals using other tags with specific tag given.
+The application was designed to analyze sentiment by collecting real-time tweets from Twitter and generating a network graph to visualize which other tags are being used alongside a specified tag.
+
+-Sentiment Analyzer
+
+-To analyze tweet sentiments, we trained a CNN model with 1.6 million tweets from a Kaggle dataset. Due to Twitter's recent restriction on tweet collection to around 2400 tweets per day, gathering a large dataset directly from Twitter has become challenging.
+-We achieved 83% accuracy after training for 2 epochs. Training was halted at this point because each epoch took nearly 2 hours, and we lacked sufficient computing resources to continue. Attempts to train the model using Google Colab were unsuccessful as the process consumed excessive resources, exceeding the limits of the free version.
 
 
-- Sentiment Analyser
-    - For the analysis of the sentiment of tweet, we have trained CNN model with 1.6 millions tweets collected from twiiter and provided into Kaggle dataset, because twitter just reduced tweet collection to around 2400 tweets per day. So, it is difficult to collect large amount of dataset.
-    - We achieve 83% accuracy after 2 epochs, then we stopped the training because one epoch almost took 2 hours to train and we don't habe enough computing power resources to train further. And, we also traid to train model into Google Colab but it also crashed because it is using lot of resources and in free version of Google Colab we are limited to use resources.
+-Network Graph Generator
 
-- Network grpah generator
-    - For the network graph, when user enter tag and hit generate graph, we start collecting latest tweets related to that tag and extract other tags people are using with that tag. Based on that collected tags we generate network graph using networkx library.
+-For the network graph, when a user enters a tag and requests a graph, we collect the latest tweets containing that tag and extract other tags used in conjunction with it. We then generate a network graph based on these collected tags using the NetworkX library.
     
 
 
