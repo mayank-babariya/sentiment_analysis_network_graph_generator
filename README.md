@@ -1,5 +1,5 @@
 
-# Sentiment Analyser & Network graph generator
+# Sentiment Analyser & Network graph generator (TwitterSphere)
 The application was designed to analyze sentiment by collecting real-time tweets from Twitter and generating a network graph to visualize which other tags are being used alongside a specified tag.
 
 -Sentiment Analyzer
